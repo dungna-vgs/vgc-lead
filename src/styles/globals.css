@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.bg-gradient {
+  background: rgb(240,200,119);
+  background: linear-gradient(90deg, rgba(240,200,119,1) 100%, rgba(249,220,118,1) 100%, rgba(253,203,106,1) 100%);
+}
+
+.bg-image {
+  background-image: url('../assets/images/bg-1.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.text-primary {
+  color: #0074BB;
+}
+
+.text-secondary {
+  color: #0F0F0F;
+}
+
+.bg-primary {
+  background: #0074BB;
+}
+
+/* Show check icon when checkbox is checked */
+input[type="checkbox"]:checked + div svg {
+  display: block;
+}
+
+/* Custom checkbox styling */
+input[type="checkbox"]:checked + div {
+  /*background-color: #0074BB; !* Tailwind color: indigo-600 *!*/
+  /* Add any other styling you want for the checked state */
+  border: 1px #0074BB solid;
+}
