@@ -64,6 +64,10 @@ const schema = yup.object().shape({
 //   match_count?: string;
 // };
 
+export const config = {
+  runtime: "edge",
+};
+
 export default function Home() {
   const [openOtpModal, setOpenOtpModal] = useState(false);
   const [openInputModal, setOpenInputModal] = useState(false);

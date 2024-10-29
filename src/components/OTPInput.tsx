@@ -50,7 +50,9 @@ export default function OTPInput({
           maxLength={1}
           onChange={(e) => handleChange(e.target.value, index)}
           onKeyDown={(e) => handleKeyDown(e, index)}
-          ref={(el) => (inputRefs.current[index] = el)}
+          ref={(el) => {
+            inputRefs.current[index] = el;
+          }}
           className="w-12 h-12 border-2 border-gray-300 rounded text-center text-xl focus:border-primary font-bold text-gray-800 disabled:opacity-20"
         />
       ))}
